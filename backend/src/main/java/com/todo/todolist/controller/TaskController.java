@@ -6,6 +6,7 @@ import com.todo.todolist.repository.TaskRepository;
 //Import da anotação @Autowired
 import org.springframework.beans.factory.annotation.Autowired;
 //Import de anotações da API REST
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 //Import de classes Java
@@ -35,5 +36,30 @@ public class TaskController {
     @GetMapping("/{id}")
     public Optional<Task> getTaskById(@PathVariable Long id) {
         return taskRepository.findById(id);
+    }
+
+    // Atualiza a task
+    @PutMapping("/{id}")
+    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task taskDetails) {
+        return taskRepository.findById(id)
+                .map(task -> {
+                    task.setTitle(taskDetails.getTitle());
+                    task.setDescription(taskDetails.getDescription());
+                    task.setStatus(taskDetails.getStatus());
+                    Task updated = taskRepository.save(task);
+                    return ResponseEntity.ok().body(updated);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    // Deleta a task
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
+        return taskRepository.findById(id)
+                .map(task -> {
+                    taskRepository.delete(task);
+                    return ResponseEntity.noContent().<Void>build();
+                })
+                .orElse(ResponseEntity.notFound().build());
     }
 }
