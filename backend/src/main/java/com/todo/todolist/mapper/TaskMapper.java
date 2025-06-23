@@ -2,6 +2,7 @@ package com.todo.todolist.mapper;
 
 import com.todo.todolist.dto.TaskDTO;
 import com.todo.todolist.model.Task;
+import com.todo.todolist.model.Status;
 
 
 public class TaskMapper {

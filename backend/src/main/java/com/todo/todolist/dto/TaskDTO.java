@@ -3,6 +3,7 @@ package com.todo.todolist.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import com.todo.todolist.model.Status;
 
 /**
  * O DTO, um padrão de projeto, é responsável por transferir os dados de Task entre diferentes camadas, ocultando dados
@@ -33,7 +34,7 @@ public class TaskDTO {
 
     @Schema(title = "Status de cada task", example = "Concluído" )
     @NotBlank(message = "A status is required")
-    private String status;
+    private Status status;
 
     public Long getId() {
         return id;
@@ -59,11 +60,11 @@ public class TaskDTO {
         this.description = description;
     }
 
-    public String getStatus() {
+    public Status getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 }
