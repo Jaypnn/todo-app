@@ -16,13 +16,6 @@ public class Task {
     public Task() {
     }
 
-    public Task(Long id, String title, String description, String status) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.status = status;
-    }
-
     // Getters e Setters
 
     public Long getId() {
