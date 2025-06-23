@@ -134,23 +134,6 @@ Ao fechar o aplicativo, o backend é encerrado automaticamente.
 
 ---
 
-## 🏗️ Estrutura das Configurações
-
-- Arquivo principal de configuração do backend:
-
-```
-backend/src/main/resources/application.properties
-```
-
-Define:
-
-```properties
-spring.application.name=todolist
-spring.profiles.active=dev
-```
-
----
-
 ## 📜 Licença
 
 Projeto desenvolvido para fins educacionais e de teste.
