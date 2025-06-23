@@ -51,7 +51,7 @@ Para rodar o projeto, você precisa ter instalado:
 ### ✔️ Passo 1: Clone o projeto
 
 ```bash
-git clone https://github.com/seu-usuario/todolist.git
+[git clone https://github.com/Jaypnn/todo-app.git
 cd todolist/frontend
 ```
 
