@@ -1,0 +1,39 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-todolist
+    restart: always
+    environment:
+      MYSQL_DATABASE: todolist_db
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+      MYSQL_USER: user
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - todolist-network
+
+volumes:
+  mysql-data:
+
+networks:
+  todolist-network:
+    name: todolist-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend_todolist
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - todolist-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/todolist_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
