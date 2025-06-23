@@ -8,7 +8,8 @@ function startDev() {
 
     console.log('🔵 Iniciando backend via .jar...');
 
-    const jarPath = path.resolve(__dirname, '..', 'backend', 'target', 'todolist-0.0.1-SNAPSHOT.jar');
+    const jarPath = path.resolve(__dirname, '..', 'backend', 'app.jar');
+    console.log('jarPath', jarPath);
 
     backendProcess = spawn(
         'java',
