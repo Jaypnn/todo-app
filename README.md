@@ -65,7 +65,13 @@ npm install
 
 ---
 
-### ✔️ Passo 3: Execute o aplicativo
+✔️ Passo 3: Rode o ambiente DEV
+npm run dev
+✅ Isso irá:
+
+inicializar o frontend.
+
+### ✔️ Passo 4: Execute o aplicativo
 
 ```bash
 npm run electron
@@ -74,7 +80,7 @@ npm run electron
 ✅ Isso irá:
 
 - Iniciar o **Backend** (Spring Boot rodando com banco H2)
-- Abrir o **Frontend** (Electron Desktop App)
+- Abrir o Aplicativo Desktop Electron
 
 ---
 
