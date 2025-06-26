@@ -65,7 +65,7 @@ npm install
 
 ---
 
-## ✔️ Passo 3: Rode o ambiente DEV
+### ✔️ Passo 3: Rode o ambiente DEV
 npm run dev
 ✅ Isso irá:
 
