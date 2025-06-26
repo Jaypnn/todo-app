@@ -71,6 +71,8 @@ npm run dev
 
 inicializar o frontend.
 
+---
+
 ### ✔️ Passo 4: Execute o aplicativo
 
 ```bash
